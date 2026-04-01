@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise CI/CD Pipeline | DevOps Portfolio</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="project-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html"><h2>DevOps Portfolio</h2></a>
+            </div>
+            <div class="back-link">
+                <a href="../index.html#projects"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero">
+        <div class="container">
+            <div class="project-header">
+                <div class="project-icon-large">
+                    <i class="fas fa-code-branch"></i>
+                </div>
+                <h1>Enterprise CI/CD Pipeline</h1>
+                <p class="project-tagline">Scalable continuous integration and deployment for microservices</p>
+                <div class="project-meta">
+                    <span><i class="fas fa-calendar"></i> September 2023</span>
+                    <span><i class="fas fa-clock"></i> 4 months</span>
+                    <span><i class="fas fa-users"></i> Team of 5</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="main-content">
+                    <div class="content-section">
+                        <h2>Project Overview</h2>
+                        <p>
+                            Built a comprehensive enterprise-grade CI/CD pipeline system supporting 50+ microservices 
+                            deployed across multiple environments. The pipeline handles everything from code commit to 
+                            production deployment with automated testing, security scanning, and compliance checks.
+                        </p>
+                        <p>
+                            The solution processes over 500 deployments per week with a 98% success rate, reducing 
+                            average deployment time from 2 hours to under 15 minutes while maintaining high quality standards.
+                        </p>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>The Challenge</h2>
+                        <div class="challenge-list">
+                            <div class="challenge-item">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <div>
+                                    <h4>Fragmented Tooling</h4>
+                                    <p>Multiple teams using different CI/CD tools leading to inconsistent processes</p>
+                                </div>
+                            </div>
+                            <div class="challenge-item">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <div>
+                                    <h4>Security Gaps</h4>
+                                    <p>No standardized security scanning or vulnerability management</p>
+                                </div>
+                            </div>
+                            <div class="challenge-item">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <div>
+                                    <h4>Manual Approvals</h4>
+                                    <p>Production deployments required manual intervention, creating bottlenecks</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>Solution Architecture</h2>
+                        <div class="architecture-features">
+                            <div class="feature-box">
+                                <h4><i class="fas fa-cogs"></i> Multi-Stage Pipeline</h4>
+                                <p>Standardized pipeline with build, test, scan, deploy stages with parallel execution</p>
+                            </div>
+                            <div class="feature-box">
+                                <h4><i class="fas fa-docker"></i> Container-Based Builds</h4>
+                                <p>All builds run in Docker containers ensuring consistency and reproducibility</p>
+                            </div>
+                            <div class="feature-box">
+                                <h4><i class="fas fa-shield-alt"></i> Security First</h4>
+                                <p>Integrated Trivy, SonarQube, and OWASP dependency checks</p>
+                            </div>
+                            <div class="feature-box">
+                                <h4><i class="fas fa-robot"></i> Automated Testing</h4>
+                                <p>Unit, integration, and smoke tests run automatically with quality gates</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>Implementation Details</h2>
+                        <div class="tech-implementation">
+                            <div class="impl-step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Jenkins Pipeline as Code</h4>
+                                    <p>Created reusable Jenkinsfile templates and shared libraries for consistent pipeline definitions across all microservices</p>
+                                    <div class="code-snippet">
+                                        <code>
+@Library('shared-pipeline-lib') _<br>
+standardPipeline {<br>
+&nbsp;&nbsp;serviceName = 'user-service'<br>
+&nbsp;&nbsp;dockerRegistry = 'ecr.amazonaws.com'<br>
+&nbsp;&nbsp;deployEnvironments = ['dev', 'staging', 'prod']<br>
+}
+                                        </code>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="impl-step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Artifact Management</h4>
+                                    <p>Set up AWS ECR for container images and Artifactory for other artifacts with lifecycle policies</p>
+                                </div>
+                            </div>
+                            <div class="impl-step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Environment Promotion</h4>
+                                    <p>Implemented automated promotion through dev → staging → production with approval gates</p>
+                                </div>
+                            </div>
+                            <div class="impl-step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Notifications & Reporting</h4>
+                                    <p>Integrated Slack notifications and built custom dashboards for pipeline metrics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>Results & Impact</h2>
+                        <div class="results-grid">
+                            <div class="result-card">
+                                <div class="result-icon"><i class="fas fa-rocket"></i></div>
+                                <h3>500+</h3>
+                                <p>Weekly deployments</p>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-icon"><i class="fas fa-clock"></i></div>
+                                <h3>15 min</h3>
+                                <p>Average deployment time</p>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-icon"><i class="fas fa-percentage"></i></div>
+                                <h3>98%</h3>
+                                <p>Success rate</p>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-icon"><i class="fas fa-bug"></i></div>
+                                <h3>60%</h3>
+                                <p>Reduction in production bugs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>Key Takeaways</h2>
+                        <ul class="takeaways-list">
+                            <li><i class="fas fa-lightbulb"></i> Pipeline as Code enables version control and consistency across teams</li>
+                            <li><i class="fas fa-lightbulb"></i> Early security scanning catches vulnerabilities before production</li>
+                            <li><i class="fas fa-lightbulb"></i> Automated testing with quality gates maintains code quality</li>
+                            <li><i class="fas fa-lightbulb"></i> Metrics and observability are crucial for continuous improvement</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="sidebar-card">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Jenkins</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">ECR</span>
+                            <span class="tech-tag">ECS</span>
+                            <span class="tech-tag">Groovy</span>
+                            <span class="tech-tag">Trivy</span>
+                            <span class="tech-tag">SonarQube</span>
+                            <span class="tech-tag">Artifactory</span>
+                            <span class="tech-tag">Slack</span>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Project Links</h3>
+                        <div class="project-links">
+                            <a href="#" class="project-link-btn"><i class="fab fa-github"></i> View on GitHub</a>
+                            <a href="#" class="project-link-btn"><i class="fas fa-book"></i> Documentation</a>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>Related Projects</h3>
+                        <div class="related-projects">
+                            <a href="kubernetes-automation.html" class="related-item">
+                                <i class="fab fa-kubernetes"></i>
+                                <span>Kubernetes Automation</span>
+                            </a>
+                            <a href="monitoring-system.html" class="related-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Monitoring System</span>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 DevOps Portfolio. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
